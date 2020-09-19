@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create a New Page</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.errors }}
+        {{ form }}
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <a class="btn btn-warning" href="{% url 'wiki:index' %}">Cancel</a>
+    </form>
+    
+{% endblock %}

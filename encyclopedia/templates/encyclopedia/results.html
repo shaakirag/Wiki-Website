@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>Searched for: {{ query }}</h1>
+    <h3>Did you mean:</h3>
+
+    {% for sub in subs %}
+        <ul>
+            <li><a href="{% url 'wiki:entry' sub %}">{{ sub }}</a></li>
+        </ul>
+    {% endfor %}
+
+
+{% endblock %}

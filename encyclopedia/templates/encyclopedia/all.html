@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+{{ content | safe }}
+<button class="btn btn-primary">
+    <a style="color: white" href="{% url 'wiki:edit' title %}">Edit</a>
+</button>
+<button class="btn btn-danger">
+    <a style="color: white" href="{% url 'wiki:delete' title %}">Delete</a>
+</button>
+{% endblock %}
